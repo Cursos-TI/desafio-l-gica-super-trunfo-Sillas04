@@ -128,16 +128,50 @@ int main() {
     //Cidade 02
     printf("Cidade: %s \nCódigo: %s \nPopulação: %lu hab. \nÁrea: %.2f Km² \nPIB: R$ %.1f \nPontos Turísticos: %d \nDensidade Populacional: %.2f hab/km² \nPIB per capta: R$ %.2f \n\n", cidade_b02, codigo_b02, populacao_b02, km_area_b02, pib_b02, turistico_b02, densidade_b02, pib_capta_b02);
 
-    /*printf("**** **** **** C O M P A R A Ç Ã O **** **** ****\n");
+    printf("** C O M P A R A Ç Ã O ** P O P U L A Ç Ã O **\n");
     printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_a01, estado_A, codigo_a01, populacao_a01);
     printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_b01, estado_B, codigo_b01, populacao_b01);
     if (populacao_a01 > populacao_b01){
-        printf("Resultado: %s é a vencedora!\n", cidade_a01);
+        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
     } else{
-        printf("Resultado: %s é a vencedora!", cidade_b01);
-    }*/
-    
+        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
+    }
 
+    printf("** C O M P A R A Ç Ã O ** Á R E A **\n");
+    printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f km²\n",cidade_a01, estado_A, codigo_a01, km_area_a01);
+    printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f km²\n",cidade_b01, estado_B, codigo_b01, km_area_b01);
+    if (km_area_a01 > km_area_b01){
+        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
+    } else {
+        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
+    }
+    
+    printf("** C O M P A R A Ç Ã O ** P I B **\n");
+    printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_a01, estado_A, codigo_a01, pib_a01);
+    printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_b01, estado_B, codigo_b01, pib_b01);
+    if (pib_a01 > pib_b01){
+        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
+    } else {
+        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
+    }
+
+    printf("** C O M P A R A Ç Ã O ** D E N S I D A D E ** POPU. **\n");
+    printf("Carta: %s - Estado: %s, Código: %s, Densidade populacional: %.2f hab/km²\n",cidade_a01, estado_A, codigo_a01, densidade_a01);
+    printf("Carta: %s - Estado: %s, Código: %s, Densidade populacional: %.2f hab/km²\n",cidade_b01, estado_B, codigo_b01, densidade_b01);
+    if (densidade_a01 < densidade_b01){
+        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
+    } else {
+        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
+    }
+    
+    printf("** C O M P A R A Ç Ã O ** PIB ** C A P T A **\n");
+    printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: R$ %.2f \n",cidade_a01, estado_A, codigo_a01, pib_capta_a01);
+    printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: R$ %.2f \n",cidade_b01, estado_B, codigo_b01, pib_capta_b01);
+    if (pib_capta_a01 > pib_capta_b01){
+        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
+    } else {
+        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
+    }
     
     
     // Desenvolva a lógica de comparação entre duas cartas.
