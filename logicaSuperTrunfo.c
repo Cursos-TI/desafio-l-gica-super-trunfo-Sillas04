@@ -23,6 +23,14 @@ int main() {
     float densidade_a01, densidade_a02, densidade_b01, densidade_b02;
     float pib_capta_a01, pib_capta_a02, pib_capta_b01, pib_capta_b02;
 
+    //Variaveis para menu e comparação 
+    int menu_compara;
+    char menu_compara_populacao;
+    char menu_compara_area;
+    char menu_compara_pib;
+    char menu_compara_densidade;
+    char menu_compara_pib_capta;   
+
     // cadastro dos estados
     printf("Digite o nome do 1° estado: \n");
     scanf("%s", estado_A);
@@ -111,7 +119,7 @@ int main() {
     densidade_b02 = (float) populacao_b02 / km_area_b02;
     pib_capta_b02 = (float) pib_b02 / populacao_b02; 
 
-    printf(" **** **** **** V I S U A L I Z A Ç Ã O **** **** ****  \n\n");
+    printf("\n **** **** **** V I S U A L I Z A Ç Ã O **** **** ****  \n\n");
 
     //Estado A
     printf("Estado: %s \n\n", estado_A);
@@ -128,62 +136,162 @@ int main() {
     //Cidade 02
     printf("Cidade: %s \nCódigo: %s \nPopulação: %lu hab. \nÁrea: %.2f Km² \nPIB: R$ %.1f \nPontos Turísticos: %d \nDensidade Populacional: %.2f hab/km² \nPIB per capta: R$ %.2f \n\n", cidade_b02, codigo_b02, populacao_b02, km_area_b02, pib_b02, turistico_b02, densidade_b02, pib_capta_b02);
 
-    printf("** C O M P A R A Ç Ã O ** P O P U L A Ç Ã O **\n");
-    printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_a01, estado_A, codigo_a01, populacao_a01);
-    printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_b01, estado_B, codigo_b01, populacao_b01);
-    if (populacao_a01 > populacao_b01){
-        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
-    } else{
-        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
-    }
-
-    printf("** C O M P A R A Ç Ã O ** Á R E A **\n");
-    printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f km²\n",cidade_a01, estado_A, codigo_a01, km_area_a01);
-    printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f km²\n",cidade_b01, estado_B, codigo_b01, km_area_b01);
-    if (km_area_a01 > km_area_b01){
-        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
-    } else {
-        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
-    }
+    // --- Propriedades menu interativo
+    printf("**** **** -COMPARAÇÃO DE ATRIBUTOS DA CARTA- **** **** \n\n");
+    printf("Escolha uma das opções para comparação:\n");
+    printf("1 - Comparar população :\n");
+    printf("2 - Comparar área: \n");
+    printf("3 - Comparar PIB: \n");
+    printf("4 - Comparar Densidade Populacional: \n");
+    printf("5 - Comparar PIB per capta: \n");
+    scanf("%d", &menu_compara);   
     
-    printf("** C O M P A R A Ç Ã O ** P I B **\n");
-    printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_a01, estado_A, codigo_a01, pib_a01);
-    printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_b01, estado_B, codigo_b01, pib_b01);
-    if (pib_a01 > pib_b01){
-        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
-    } else {
-        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
-    }
+    switch (menu_compara) // Menu principal
+    {
+    case 1:
+        printf("\n-------- Escolha a carta para comparar a população! --------\n\n");
+        printf("a - Carta: %s com Carta: %s\n", cidade_a01, cidade_b01); //Menu alternativo para população
+        printf("b - Carta: %s com Carta: %s\n", cidade_a02, cidade_b02);        
+        scanf("%s", &menu_compara_populacao);
 
-    printf("** C O M P A R A Ç Ã O ** D E N S I D A D E ** POPU. **\n");
-    printf("Carta: %s - Estado: %s, Código: %s, Densidade populacional: %.2f hab/km²\n",cidade_a01, estado_A, codigo_a01, densidade_a01);
-    printf("Carta: %s - Estado: %s, Código: %s, Densidade populacional: %.2f hab/km²\n",cidade_b01, estado_B, codigo_b01, densidade_b01);
-    if (densidade_a01 < densidade_b01){
-        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
-    } else {
-        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
-    }
-    
-    printf("** C O M P A R A Ç Ã O ** PIB ** C A P T A **\n");
-    printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: R$ %.2f \n",cidade_a01, estado_A, codigo_a01, pib_capta_a01);
-    printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: R$ %.2f \n",cidade_b01, estado_B, codigo_b01, pib_capta_b01);
-    if (pib_capta_a01 > pib_capta_b01){
-        printf("Resultado: %s é a vencedora!\n\n", cidade_a01);
-    } else {
-        printf("Resultado: %s é a vencedora!\n\n", cidade_b01);
-    }
-    
-    
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+            switch (menu_compara_populacao)//Menu compara população
+            {
+            case 'a'://Comparação A01 com B01
+                printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_a01, estado_A, codigo_a01, populacao_a01); 
+                printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_b01, estado_B, codigo_b01, populacao_b01);
+            if ((populacao_a01 > populacao_b01)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a01);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);
+            }        
+            break;
+            case 'b'://Comparação A02 com B02
+                printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_a02, estado_A, codigo_a02, populacao_a02);
+                printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_b02, estado_B, codigo_b02, populacao_b02);
+            if ((populacao_a02 > populacao_b02)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a02);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);
+            }
+            break;
+            }
+    break;           
+    case 2:
+        printf("-------- Escolha a carta para comparar a área! --------\n\n");
+        printf("a - Carta: %s com Carta: %s\n", cidade_a01, cidade_b01); //Menu alternativo para área
+        printf("b - Carta: %s com Carta: %s\n", cidade_a02, cidade_b02);        
+        scanf("%s", &menu_compara_area);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+            switch (menu_compara_area)//Menu compara area
+            {
+            case 'a'://Comparação A01 com B01
+                printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_a01, estado_A, codigo_a01, km_area_a01); 
+                printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_b01, estado_B, codigo_b01, km_area_b01);
+            if ((km_area_a01 > km_area_b01)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a01);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);
+            }        
+            break;
+            case 'b'://Comparação A02 com B02
+                printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_a02, estado_A, codigo_a02, km_area_a02);
+                printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_b02, estado_B, codigo_b02, km_area_b02);
+            if ((km_area_a02 > km_area_b02)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a02);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);
+            }
+            break;
+            }
+    break;
+    case 3:
+        printf("-------- Escolha a carta para comparar o PIB! --------\n\n");
+        printf("a - Carta: %s com Carta: %s\n", cidade_a01, cidade_b01); //Menu alternativo para PIB
+        printf("b - Carta: %s com Carta: %s\n", cidade_a02, cidade_b02);        
+        scanf("%s", &menu_compara_pib);
 
+            switch (menu_compara_pib) //Menu compara PIB 
+            {           
+            case 'a'://Comparação A01 com B01
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f\n",cidade_a01, estado_A, codigo_a01, pib_a01); 
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f\n",cidade_b01, estado_B, codigo_b01, pib_b01);
+            if ((pib_a01 > pib_b01)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a01);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);
+            }        
+            break;
+            case 'b'://Comparação A02 com B02
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_a02, estado_A, codigo_a02, pib_a02);
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_b02, estado_B, codigo_b02, pib_b02);
+            if ((pib_a02 > pib_b02)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a02);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);
+            }
+            break;
+            }
+    break;
+    case 4:
+        printf("-------- Escolha a carta para comparar a Densidade Populacional! --------\n\n");
+        printf("a - Carta: %s com Carta: %s\n", cidade_a01, cidade_b01); //Menu alternativo para densidade
+        printf("b - Carta: %s com Carta: %s\n", cidade_a02, cidade_b02);        
+        scanf("%s", &menu_compara_densidade);
+
+            switch (menu_compara_densidade)//Menu compara densidade
+            {
+            case 'a'://Comparação A01 com B01
+                printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_a01, estado_A, codigo_a01, densidade_a01); 
+                printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_b01, estado_B, codigo_b01, densidade_b01);
+            if ((densidade_a01 > densidade_b01)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a01);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);
+            }        
+            break;
+            case 'b'://Comparação A02 com B02
+                printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_a02, estado_A, codigo_a02, densidade_a02);
+                printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_b02, estado_B, codigo_b02, densidade_b02);
+            if ((densidade_a02 > densidade_b02)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a02);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);
+            }
+            break;
+            }
+    break;
+    case 5:
+        printf("-------- Escolha a carta para comparar a PIB per capta! --------\n\n");
+        printf("a - Carta: %s com Carta: %s\n", cidade_a01, cidade_b01); //Menu alternativo para PIB per capta
+        printf("b - Carta: %s com Carta: %s\n", cidade_a02, cidade_b02);        
+        scanf("%s", &menu_compara_pib_capta);
+
+            switch (menu_compara_pib_capta)//Menu compara PIB per capta
+            {
+            case 'a'://Comparação A01 com B01
+                printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_a01, estado_A, codigo_a01, pib_capta_a01); 
+                printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_b01, estado_B, codigo_b01, pib_capta_b01);
+            if ((pib_capta_a01 > pib_capta_b01)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a01);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);
+            }        
+            break;
+            case 'b'://Comparação A02 com B02
+                printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_a02, estado_A, codigo_a02, pib_capta_a02);
+                printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_b02, estado_B, codigo_b02, pib_capta_b02);
+            if ((pib_capta_a02 > pib_capta_b02)){
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_a02);
+            } else {
+                printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);
+            }
+            break;
+            }
+    break;
+    default:
+        printf("### Ação inválida ####");
+    }
+        
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
