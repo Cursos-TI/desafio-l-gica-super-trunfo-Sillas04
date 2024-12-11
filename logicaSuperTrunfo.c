@@ -144,6 +144,7 @@ int main() {
     printf("3 - Comparar PIB: \n");
     printf("4 - Comparar Densidade Populacional: \n");
     printf("5 - Comparar PIB per capta: \n");
+    printf("6- Comparar dois artibutos: \n");
     scanf("%d", &menu_compara);   
     
     switch (menu_compara) // Menu principal
@@ -219,12 +220,12 @@ int main() {
             case 'a'://Comparação A01 com B01
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_a01, estado_A, codigo_a01, densidade_a01); 
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_b01, estado_B, codigo_b01, densidade_b01);
-                (densidade_a01 > densidade_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);                  
+                (densidade_a01 < densidade_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);                  
             break;
             case 'b'://Comparação A02 com B02
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_a02, estado_A, codigo_a02, densidade_a02);
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_b02, estado_B, codigo_b02, densidade_b02);
-                (densidade_a02 > densidade_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);            
+                (densidade_a02 < densidade_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);            
             break; 
             }           
     break;
@@ -249,17 +250,10 @@ int main() {
             break;
             }
     
-    break;
+    break;    
     default:
         printf("### Ação inválida ####");
-    }
-        
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+  
 
     return 0;
 }
