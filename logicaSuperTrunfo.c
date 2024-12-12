@@ -143,7 +143,7 @@ int main() {
     // --- Propriedades menu interativo
     printf("**** **** -COMPARAÇÃO DE ATRIBUTOS DA CARTA- **** **** \n\n");
     printf("Escolha uma das opções para comparação:\n");
-    printf("1 - Comparar população :\n");
+    printf("1 - Comparar população:\n");
     printf("2 - Comparar área: \n");
     printf("3 - Comparar PIB: \n");
     printf("4 - Comparar Densidade Populacional: \n");
