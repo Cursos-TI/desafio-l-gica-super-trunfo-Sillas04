@@ -148,7 +148,7 @@ int main() {
     printf("3 - Comparar PIB: \n");
     printf("4 - Comparar Densidade Populacional: \n");
     printf("5 - Comparar PIB per capta: \n");
-    printf("6- Comparar dois artibutos: \n");
+    printf("6 - Comparar dois artibutos: \n");
     scanf("%d", &menu_compara);   
     
     switch (menu_compara) // Menu principal
@@ -162,11 +162,13 @@ int main() {
             switch (menu_compara_populacao)//Menu compara população
             {
             case 'a'://Comparação A01 com B01
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_a01, estado_A, codigo_a01, populacao_a01); 
                 printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_b01, estado_B, codigo_b01, populacao_b01);
                 (populacao_a01 > populacao_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);                   
             break;
             case 'b'://Comparação A02 com B02
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_a02, estado_A, codigo_a02, populacao_a02);
                 printf("Carta: %s - Estado: %s, Código: %s, População: %lu\n",cidade_b02, estado_B, codigo_b02, populacao_b02);
                 (populacao_a02 > populacao_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);           
@@ -182,11 +184,13 @@ int main() {
             switch (menu_compara_area)//Menu compara area
             {
             case 'a'://Comparação A01 com B01
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_a01, estado_A, codigo_a01, km_area_a01); 
                 printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_b01, estado_B, codigo_b01, km_area_b01);
                 (km_area_a01 > km_area_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);               
             break;
             case 'b'://Comparação A02 com B02
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_a02, estado_A, codigo_a02, km_area_a02);
                 printf("Carta: %s - Estado: %s, Código: %s, Área: %.2f Km²\n",cidade_b02, estado_B, codigo_b02, km_area_b02);
                 (km_area_a02 > km_area_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);            
@@ -202,13 +206,15 @@ int main() {
             switch (menu_compara_pib) //Menu compara PIB 
             {           
             case 'a'://Comparação A01 com B01
-                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f\n",cidade_a01, estado_A, codigo_a01, pib_a01); 
-                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f\n",cidade_b01, estado_B, codigo_b01, pib_b01);
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.1f\n",cidade_a01, estado_A, codigo_a01, pib_a01); 
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.1f\n",cidade_b01, estado_B, codigo_b01, pib_b01);
                 (pib_a01 > pib_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);                   
             break;
             case 'b'://Comparação A02 com B02
-                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_a02, estado_A, codigo_a02, pib_a02);
-                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.2f \n",cidade_b02, estado_B, codigo_b02, pib_b02);
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.1f \n",cidade_a02, estado_A, codigo_a02, pib_a02);
+                printf("Carta: %s - Estado: %s, Código: %s, PIB: R$ %.1f \n",cidade_b02, estado_B, codigo_b02, pib_b02);
                 (pib_a02 > pib_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);            
             break;
             }
@@ -222,11 +228,13 @@ int main() {
             switch (menu_compara_densidade)//Menu compara densidade
             {
             case 'a'://Comparação A01 com B01
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_a01, estado_A, codigo_a01, densidade_a01); 
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_b01, estado_B, codigo_b01, densidade_b01);
                 (densidade_a01 < densidade_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);                  
             break;
             case 'b'://Comparação A02 com B02
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_a02, estado_A, codigo_a02, densidade_a02);
                 printf("Carta: %s - Estado: %s, Código: %s, Densidade Populacional: %.2f hab/Km²\n",cidade_b02, estado_B, codigo_b02, densidade_b02);
                 (densidade_a02 < densidade_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);            
@@ -242,12 +250,14 @@ int main() {
             switch (menu_compara_pib_capta)//Menu compara PIB per capta
             {
             case 'a'://Comparação A01 com B01
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_a01, estado_A, codigo_a01, pib_capta_a01); 
                 printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_b01, estado_B, codigo_b01, pib_capta_b01);
                 (pib_capta_a01 > pib_capta_b01) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a01) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b01);
                    
             break;
             case 'b'://Comparação A02 com B02
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
                 printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_a02, estado_A, codigo_a02, pib_capta_a02);
                 printf("Carta: %s - Estado: %s, Código: %s, PIB per capta: %.2f\n",cidade_b02, estado_B, codigo_b02, pib_capta_b02);
                 (pib_capta_a02 > pib_capta_b02) ? printf("Resultado: Carta %s é a vencedora!\n", cidade_a02) : printf("Resultado: Carta %s é a vencedora!\n", cidade_b02);
@@ -256,7 +266,7 @@ int main() {
     
     break;
     case 6:
-        printf("\n-------- Escolha quais atributos a serem comparados --------\n");
+        printf("\n-------- Escolha quais atributos a serem comparados --------\n\n");
         printf("a - PIB e População:\n");
         printf("b - Área Km² e PIB per capta:\n");
         printf("c - Densidade: hab/Km² e Pontos turísticos:\n"); 
@@ -265,7 +275,7 @@ int main() {
         switch (escolha_atributos)
         {
         case 'a':
-            printf("\n-------- Qual carta deseja comparar --------\n");
+            printf("\n-------- Qual carta deseja comparar o PIB e a População --------\n\n");
             printf("a - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a01, codigo_a01, cidade_b01, codigo_b01);
             printf("b - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a02, codigo_a02, cidade_b02, codigo_b02);
             scanf("%s", &escolha_cidade);
@@ -273,6 +283,10 @@ int main() {
             switch (escolha_cidade)
             {
             case 'a':
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s Cod: %s - PIB: R$ %.1f, População: %lu \n", cidade_a01, codigo_a01, pib_a01, populacao_a01);
+                printf("Carta: %s Cod: %s - PIB: R$ %.1f, População: %lu \n", cidade_b01, codigo_b01, pib_b01, populacao_b01);
+
                if ((pib_a01 == pib_b01) && (populacao_a01 == populacao_b01))
                {
                     printf("Resultou em empate! \n");
@@ -283,7 +297,12 @@ int main() {
                {
                     printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b01, codigo_b01);
                }
+            break;
             case 'b':
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s Cod: %s - PIB: R$ %.1f, População: %lu \n", cidade_a02, codigo_a02, pib_a02, populacao_a02);
+                printf("Carta: %s Cod: %s - PIB: R$ %.1f, População: %lu \n", cidade_b02, codigo_b02, pib_b02, populacao_b02);
+
                 if ((pib_a02 == pib_b02) && (populacao_a02 == populacao_b02))
                 {
                     printf("Resultou em empate! \n");
@@ -299,7 +318,7 @@ int main() {
         break;
 
         case 'b':
-            printf("\n-------- Qual carta deseja comparar --------\n");
+            printf("\n-------- Qual carta deseja comparar a Área e o PIB per capta --------\n\n");
             printf("a - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a01, codigo_a01, cidade_b01, codigo_b01);
             printf("b - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a02, codigo_a02, cidade_b02, codigo_b02);
             scanf("%s", &escolha_cidade);
@@ -307,6 +326,10 @@ int main() {
             switch (escolha_cidade)
             {
             case 'a':
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s Cod: %s - Área: %.2f Km², PIB per capta: R$ %.2f \n", cidade_a01, codigo_a01, km_area_a01, pib_capta_a01);
+                printf("Carta: %s Cod: %s - Área: %.2f Km², PIB per capta: R$ %.2f \n", cidade_b01, codigo_b01, km_area_b01, pib_capta_b01);
+
                 if ((km_area_a01 == km_area_b01) && (pib_capta_a01 == pib_capta_b01))
                 {
                     printf("Resultou em empate! \n");
@@ -319,6 +342,10 @@ int main() {
                 }
             break;
             case 'b':
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s Cod: %s - Área: %.2f Km², PIB per capta: R$ %.2f \n", cidade_a02, codigo_a02, km_area_a02, pib_capta_a02);
+                printf("Carta: %s Cod: %s - Área: %.2f Km², PIB per capta: R$ %.2f \n", cidade_b02, codigo_b02, km_area_b02, pib_capta_b02);
+
                 if ((km_area_a02 == km_area_b02) && (pib_capta_a02 == pib_capta_b02))
                 {
                     printf("Resultou em empate! \n");
@@ -331,10 +358,10 @@ int main() {
                 }
             break;               
             }
-
         break;
+
         case 'c':
-         printf("\n-------- Qual carta deseja comparar --------\n");
+         printf("\n-------- Qual carta deseja comparar a Densidade populacional e o n° de pontos turísticos --------\n\n");
             printf("a - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a01, codigo_a01, cidade_b01, codigo_b01);
             printf("b - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a02, codigo_a02, cidade_b02, codigo_b02);
             scanf("%s", &escolha_cidade);
@@ -342,6 +369,10 @@ int main() {
             switch (escolha_cidade)
             {
             case 'a':
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s Cod: %s - Densidade populacional: %.2f hab/Km², Pontos turísticos: %d \n", cidade_a01, codigo_a01, densidade_a01, turistico_a01);
+                printf("Carta: %s Cod: %s - Densidade populacional: %.2f hab/Km², Pontos turísticos: %d \n", cidade_b01, codigo_b01, densidade_b01, turistico_b01);
+
                 if ((densidade_a01 == densidade_b01) && (turistico_a01 == turistico_b01))
                 {
                     printf("Resultou em empate! \n");
@@ -354,6 +385,10 @@ int main() {
                 }
                break;
             case 'b':
+                printf("\nºººººººººººººººº  VISUALIZAÇÃO ºººººººººººººººº\n\n");
+                printf("Carta: %s Cod: %s - Densidade populacional: %.2f hab/Km², Pontos turísticos: %d \n", cidade_a02, codigo_a02, densidade_a02, turistico_a02);
+                printf("Carta: %s Cod: %s - Densidade populacional: %.2f hab/Km², Pontos turísticos: %d \n", cidade_b02, codigo_b02, densidade_b02, turistico_b02);
+
                 if ((densidade_a02 == densidade_b02) && (turistico_a02 == turistico_b02))
                 {                  
                     printf("Resultou em empate! \n");
@@ -366,13 +401,11 @@ int main() {
                 }
             break;                           
             }
-
         break;            
         }       
     break;    
     default:
-        printf("### OPÇÃO INVÁLIDA! ####");
-  
-
+        printf("\n\n### @@@@@@ OPÇÃO INVÁLIDA! @@@@@@ ####\n\n");
+    }
     return 0;
 }
