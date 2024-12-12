@@ -29,7 +29,11 @@ int main() {
     char menu_compara_area;
     char menu_compara_pib;
     char menu_compara_densidade;
-    char menu_compara_pib_capta;   
+    char menu_compara_pib_capta;
+
+    //Variaveis para comparação de dois atributos
+    char escolha_atributos;
+    char escolha_cidade;   
 
     // cadastro dos estados
     printf("Digite o nome do 1° estado: \n");
@@ -250,9 +254,124 @@ int main() {
             break;
             }
     
+    break;
+    case 6:
+        printf("\n-------- Escolha quais atributos a serem comparados --------\n");
+        printf("a - PIB e População:\n");
+        printf("b - Área Km² e PIB per capta:\n");
+        printf("c - Densidade: hab/Km² e Pontos turísticos:\n"); 
+        scanf("%s", &escolha_atributos);
+
+        switch (escolha_atributos)
+        {
+        case 'a':
+            printf("\n-------- Qual carta deseja comparar --------\n");
+            printf("a - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a01, codigo_a01, cidade_b01, codigo_b01);
+            printf("b - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a02, codigo_a02, cidade_b02, codigo_b02);
+            scanf("%s", &escolha_cidade);
+
+            switch (escolha_cidade)
+            {
+            case 'a':
+               if ((pib_a01 == pib_b01) && (populacao_a01 == populacao_b01))
+               {
+                    printf("Resultou em empate! \n");
+               } else if((pib_a01 >= pib_b01) && (populacao_a01 > populacao_b01))
+               {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_a01, codigo_a01);
+               } else 
+               {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b01, codigo_b01);
+               }
+            case 'b':
+                if ((pib_a02 == pib_b02) && (populacao_a02 == populacao_b02))
+                {
+                    printf("Resultou em empate! \n");
+                } else if ((pib_a02 >= pib_b02) && (populacao_a02 > populacao_b02))
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_a02, codigo_a02);
+                } else 
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b02, codigo_b02);
+                }
+            break; 
+            }
+        break;
+
+        case 'b':
+            printf("\n-------- Qual carta deseja comparar --------\n");
+            printf("a - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a01, codigo_a01, cidade_b01, codigo_b01);
+            printf("b - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a02, codigo_a02, cidade_b02, codigo_b02);
+            scanf("%s", &escolha_cidade);
+
+            switch (escolha_cidade)
+            {
+            case 'a':
+                if ((km_area_a01 == km_area_b01) && (pib_capta_a01 == pib_capta_b01))
+                {
+                    printf("Resultou em empate! \n");
+                } else if ((km_area_a01 >= km_area_b01) && (pib_capta_a01 > pib_capta_b01))
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_a01, codigo_a01);
+                } else 
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b01, codigo_b01);
+                }
+            break;
+            case 'b':
+                if ((km_area_a02 == km_area_b02) && (pib_capta_a02 == pib_capta_b02))
+                {
+                    printf("Resultou em empate! \n");
+                } else if ((km_area_a02 >= km_area_b02) && (pib_capta_a02 > pib_capta_b02))
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_a02, codigo_a02);
+                } else 
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b02, codigo_b02);
+                }
+            break;               
+            }
+
+        break;
+        case 'c':
+         printf("\n-------- Qual carta deseja comparar --------\n");
+            printf("a - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a01, codigo_a01, cidade_b01, codigo_b01);
+            printf("b - Carta: %s Cod: %s     X    Carta: %s Cod: %s \n", cidade_a02, codigo_a02, cidade_b02, codigo_b02);
+            scanf("%s", &escolha_cidade);
+
+            switch (escolha_cidade)
+            {
+            case 'a':
+                if ((densidade_a01 == densidade_b01) && (turistico_a01 == turistico_b01))
+                {
+                    printf("Resultou em empate! \n");
+                } else if ((densidade_a01 <= densidade_b01) && (turistico_a01 > turistico_b01)) 
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_a01, codigo_a01);
+                } else
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b01, codigo_b01);
+                }
+               break;
+            case 'b':
+                if ((densidade_a02 == densidade_b02) && (turistico_a02 == turistico_b02))
+                {                  
+                    printf("Resultou em empate! \n");
+                } else if ((densidade_a02 <= densidade_b02) && ( turistico_a02 > turistico_b02))
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_a02, codigo_a02);
+                } else 
+                {
+                    printf("Carta: %s - Cod: %s é a vencedora! \n", cidade_b02, codigo_b02);
+                }
+            break;                           
+            }
+
+        break;            
+        }       
     break;    
     default:
-        printf("### Ação inválida ####");
+        printf("### OPÇÃO INVÁLIDA! ####");
   
 
     return 0;
